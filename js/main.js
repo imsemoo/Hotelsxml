@@ -9,101 +9,89 @@
   if ($(".dropdown-toggle", body).length) {
     $(".dropdown-toggle", body).dropdown();
   }
-  $(".open-loss-password", body).click(function (ev) {
-    ev.preventDefault();
-    $("#st-login-form", body).modal("hide");
-    $("#st-register-form", body).modal("hide");
-    setTimeout(function () {
-      $("#st-forgot-form", body).modal("show");
-    }, 500);
+  
+
+ // ---------Responsive-navbar-active-animation-----------
+ function test() {
+  var tabsNewAnim = $("#navbarSupportedContent");
+  var selectorNewAnim = $("#navbarSupportedContent").find("li").length;
+  var activeItemNewAnim = tabsNewAnim.find(".active");
+  var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+  var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+  var itemPosNewAnimTop = activeItemNewAnim.position();
+  var itemPosNewAnimLeft = activeItemNewAnim.position();
+  
+  $(".hori-selector").css({
+    top: itemPosNewAnimTop.top + "px",
+    left: itemPosNewAnimLeft.left + "px",
+    height: activeWidthNewAnimHeight + "px",
+    width: activeWidthNewAnimWidth + "px",
   });
-
-  // ---------Responsive-navbar-active-animation-----------
-function test() {
-	var tabsNewAnim = $("#navbarSupportedContent");
-	var selectorNewAnim = $("#navbarSupportedContent").find("li").length;
-	var activeItemNewAnim = tabsNewAnim.find(".active");
-	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
-	var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
-	var itemPosNewAnimTop = activeItemNewAnim.position();
-	var itemPosNewAnimLeft = activeItemNewAnim.position();
-	$(".hori-selector").css({
-		top: itemPosNewAnimTop.top + "px",
-		left: itemPosNewAnimLeft.left + "px",
-		height: activeWidthNewAnimHeight + "px",
-		width: activeWidthNewAnimWidth + "px"
-	});
-	$("#navbarSupportedContent").on("click", "li", function (e) {
-		$("#navbarSupportedContent ul li").removeClass("active");
-		$(this).addClass("active");
-		var activeWidthNewAnimHeight = $(this).innerHeight();
-		var activeWidthNewAnimWidth = $(this).innerWidth();
-		var itemPosNewAnimTop = $(this).position();
-		var itemPosNewAnimLeft = $(this).position();
-		$(".hori-selector").css({
-			top: itemPosNewAnimTop.top + "px",
-			left: itemPosNewAnimLeft.left + "px",
-			height: activeWidthNewAnimHeight + "px",
-			width: activeWidthNewAnimWidth + "px"
-		});
-	});
+  
+  $("#navbarSupportedContent").on("click", "li", function (e) {
+    $("#navbarSupportedContent ul li").removeClass("active");
+    $(this).addClass("active");
+    var activeWidthNewAnimHeight = $(this).innerHeight();
+    var activeWidthNewAnimWidth = $(this).innerWidth();
+    var itemPosNewAnimTop = $(this).position();
+    var itemPosNewAnimLeft = $(this).position();
+    
+    $(".hori-selector").css({
+      top: itemPosNewAnimTop.top + "px",
+      left: itemPosNewAnimLeft.left + "px",
+      height: activeWidthNewAnimHeight + "px",
+      width: activeWidthNewAnimWidth + "px",
+    });
+  });
 }
+
 $(document).ready(function () {
-	setTimeout(function () {
-		test();
-	});
+  setTimeout(function () {
+    test();
+  });
 });
+
 $(window).on("resize", function () {
-	setTimeout(function () {
-		test();
-	}, 500);
+  clearTimeout(window.resizedFinished);
+  window.resizedFinished = setTimeout(function () {
+    test();
+  }, 500);
 });
+
 $(".navbar-toggler").click(function () {
-	$(".navbar-collapse").slideToggle(300);
-	setTimeout(function () {
-		test();
-	});
+  $(".navbar-collapse").slideToggle(300, function () {
+    test();
+  });
 });
 
-// --------------add active class-on another-page move----------
-jQuery(document).ready(function ($) {
-	// Get current path and find target link
-	var path = window.location.pathname.split("/").pop();
-
-	// Account for home page with empty path
-	if (path == "") {
-		path = "index.html";
-	}
-
-	var target = $('#navbarSupportedContent ul li a[href="' + path + '"]');
-	// Add active class to target link
-	target.parent().addClass("active");
-});
-
-document.querySelector('#contact-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  e.target.elements.name.value = '';
-  e.target.elements.email.value = '';
-  e.target.elements.message.value = '';
-});
-// Add active class on another page linked
-// ==========================================
-// $(window).on('load',function () {
-//     var current = location.pathname;
-//     console.log(current);
-//     $('#navbarSupportedContent ul li a').each(function(){
-//         var $this = $(this);
-//         // if the current path is like this link, make it active
-//         if($this.attr('href').indexOf(current) !== -1){
-//             $this.parent().addClass('active');
-//             $this.parents('.menu-submenu').addClass('show-dropdown');
-//             $this.parents('.menu-submenu').parent().addClass('active');
-//         }else{
-//             $this.parent().removeClass('active');
-//         }
-//     })
-// });
-
+// Add active class to the current page link
+var path = window.location.pathname.split("/").pop() || "index.html";
+var target = $('#navbarSupportedContent ul li a[href="' + path + '"]');
+target.parent().addClass("active");
+/*
+  document.querySelector("#contact-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    e.target.elements.name.value = "";
+    e.target.elements.email.value = "";
+    e.target.elements.message.value = "";
+  });*/
+  // Add active class on another page linked
+  // ==========================================
+  // $(window).on('load',function () {
+  //     var current = location.pathname;
+  //     console.log(current);
+  //     $('#navbarSupportedContent ul li a').each(function(){
+  //         var $this = $(this);
+  //         // if the current path is like this link, make it active
+  //         if($this.attr('href').indexOf(current) !== -1){
+  //             $this.parent().addClass('active');
+  //             $this.parents('.menu-submenu').addClass('show-dropdown');
+  //             $this.parents('.menu-submenu').parent().addClass('active');
+  //         }else{
+  //             $this.parent().removeClass('active');
+  //         }
+  //     })
+  // });
 
   // Function to check if an element is in the viewport
   function isElementInViewport(el) {
@@ -891,115 +879,119 @@ document.querySelector('#contact-form').addEventListener('submit', (e) => {
     $(this).addClass("active").siblings().removeClass("active");
 });*/
 
-$(document).ready(function () {
-  var itemWidth = ($(".blogs-slider").width() - 20) / 2; // Calculate the item width
+  $(document).ready(function () {
+    var itemWidthBlogs = ($(".blogs-slider").width() - 20) / 2; // Calculate the item width
 
-  // Set the width and margin for each individual blog item
-  $(".projcard:even").css({
-      "width": itemWidth + "px",
-      "margin-right": "20px"
-  });
+    // Set the width and margin for each individual blog item
+    $(".projcard:even").css({
+      width: itemWidthBlogs + "px",
+      "margin-right": "20px",
+    });
 
-  $(".blogs-slider").flexslider({
+    $(".blogs-slider").flexslider({
       animation: "slide",
       animationLoop: true, // Allow continuous loop
-      itemWidth: itemWidth, // Set the item width based on calculations
+      itemWidth: itemWidthBlogs, // Set the item width based on calculations
       minItems: 2, // Minimum number of items to display
       maxItems: 2, // Maximum number of items to display
       slideshow: true, // Enable autoplay
       slideshowSpeed: 5000, // Set autoplay speed in milliseconds (e.g., 5000ms = 5 seconds)
       pauseOnHover: true, // Pause autoplay on hover
+    });
   });
-});
 
- // opstions owl slider
- var mainSlider = $(".main-slider");
- mainSlider.owlCarousel({
-     items: 1,
-     loop: true,
-     margin: 10,
-     dots: true,
-     nav: false,
- });
+  
+ 
 
   $(document).ready(function () {
-    $(".st-service-slider").each(function () {
-      $(this).owlCarousel({
-        loop: false,
-        items: 4,
-        margin: 20,
-        responsiveClass: true,
-        dots: false,
-        responsive: {
-          0: {
-            items: 2,
-            nav: false,
-            margin: 15,
-          },
-          992: {
-            items: 3,
-            nav: true,
-          },
-          1200: {
-            items: 4,
-            nav: true,
-          },
-        },
-      });
+    // Initialize the main slider
+    var mainSlider = $(".main-slider");
+    mainSlider.owlCarousel({
+      items: 1,
+      loop: true,
+      margin: 10,
+      dots: true,
+      nav: false,
     });
-
-    $(".st-service-rental-slider").each(function () {
-      $(this).owlCarousel({
-        loop: false,
-        items: 3,
-        margin: 20,
-        responsiveClass: true,
-        dots: true,
-        responsive: {
-          0: {
-            items: 2,
-            nav: false,
-            margin: 15,
-          },
-          992: {
-            items: 3,
-            nav: true,
-          },
-        },
+  
+    // Initialize other Owl Carousel sliders
+    function initOwlCarousel($element, options) {
+      $element.each(function () {
+        $(this).owlCarousel(options);
       });
-    });
-
-    $(".st-testimonial-slider").each(function () {
-      $(this).owlCarousel({
-        loop: false,
-        items: 4,
-        margin: 30,
-        responsiveClass: true,
-        dots: true,
-        nav: false,
-        responsive: {
-          0: {
-            items: 1,
-            margin: 15,
-          },
-          575: {
-            items: 2,
-            margin: 15,
-          },
-          992: {
-            items: 3,
-          },
-          1200: {
-            items: 3,
-          },
+    }
+  
+    initOwlCarousel($(".st-service-slider"), {
+      loop: false,
+      items: 4,
+      margin: 20,
+      responsiveClass: true,
+      dots: false,
+      responsive: {
+        0: {
+          items: 2,
+          nav: false,
+          margin: 15,
         },
-      });
+        992: {
+          items: 3,
+          nav: true,
+        },
+        1200: {
+          items: 4,
+          nav: true,
+        },
+      },
     });
-
+  
+    initOwlCarousel($(".st-service-rental-slider"), {
+      loop: false,
+      items: 3,
+      margin: 20,
+      responsiveClass: true,
+      dots: true,
+      responsive: {
+        0: {
+          items: 2,
+          nav: false,
+          margin: 15,
+        },
+        992: {
+          items: 3,
+          nav: true,
+        },
+      },
+    });
+  
+    initOwlCarousel($(".st-testimonial-slider"), {
+      loop: false,
+      items: 4,
+      margin: 30,
+      responsiveClass: true,
+      dots: true,
+      nav: false,
+      responsive: {
+        0: {
+          items: 1,
+          margin: 15,
+        },
+        575: {
+          items: 2,
+          margin: 15,
+        },
+        992: {
+          items: 3,
+        },
+        1200: {
+          items: 3,
+        },
+      },
+    });
+  
+    // Initialize Owl Tour Program sliders with custom navigation
     $(".owl-tour-program").each(function () {
-      var parent = $(this).parent();
-      var owl = $(this);
-      owl.owlCarousel({
+      var parent = $(this);
+      var owl = parent.owlCarousel({
         loop: false,
         items: 3,
         margin: 20,
@@ -1019,14 +1011,18 @@ $(document).ready(function () {
           },
         },
       });
+  
+      // Custom navigation for Owl Tour Program sliders
       $(".next", parent).click(function (ev) {
         ev.preventDefault();
         owl.trigger("next.owl.carousel");
       });
+  
       $(".prev", parent).click(function (ev) {
         ev.preventDefault();
         owl.trigger("prev.owl.carousel");
       });
+  
       owl.on("resized.owl.carousel", function () {
         setTimeout(function () {
           if ($(".ovscroll").length) {
@@ -1035,24 +1031,25 @@ $(document).ready(function () {
         }, 1000);
       });
     });
-
-    /* BG Slider */
-    if ($(".search-form-wrapper.slider").length) {
-      var heightSlider = $(".search-form-wrapper.slider").outerHeight();
-      $(".st-bg-slider").fotorama({
-        height: heightSlider,
-      });
-    }
-
-    $(window).resize(function () {
+  
+    // Initialize Fotorama background slider
+    function initBgSlider() {
       if ($(".search-form-wrapper.slider").length) {
         var heightSlider = $(".search-form-wrapper.slider").outerHeight();
         $(".st-bg-slider").fotorama({
           height: heightSlider,
         });
       }
+    }
+  
+    // Call the initBgSlider function on document ready and window resize
+    initBgSlider();
+  
+    $(window).resize(function () {
+      initBgSlider();
     });
   });
+  
 
   var iex = 0;
   $(".st-program-list").each(function () {
@@ -1180,10 +1177,7 @@ $(document).ready(function () {
       event.preventDefault();
       $("#login-tab").toggleClass("show");
     });
-  });
 
-  /*Flight on Mobile*/
-  $(document).ready(function () {
     $(".mobile-filter-btn").click(function () {
       $(".sidebar-filter").fadeIn();
       event.stopPropagation();
@@ -1192,60 +1186,81 @@ $(document).ready(function () {
     $(".sidebar-filter").on("click", function (event) {
       event.stopPropagation();
     });
-  });
 
-  $(document).ready(function () {
-    var itemWidth = ($("#offers").width() - 20 * 3) / 4;
-
+    var itemWidthOffers = ($("#offers").width() - 20 * 3) / 4;
     $("#offers").flexslider({
       animation: "slide", // Choose animation type: "slide" or "fade"
       slideshowSpeed: 5000, // Interval between slides in milliseconds
       animationSpeed: 600, // Animation speed in milliseconds
       animationLoop: false,
       itemMargin: 20,
-      itemWidth: itemWidth, // Set the width of each slide item
+      itemWidth: itemWidthOffers, // Set the width of each slide item
       minItems: 1, // Show at least 3 items
       maxItems: 4, // Show at most 3 items
       controlNav: true, // Hide pagination dots
       directionNav: false, // Show navigation arrows
     });
-  });
-  $(document).ready(function () {
-    // Calculate the item width based on your needs
-    var itemWidth = 270; // Replace with your desired width
 
+    // Calculate the item width based on your needs
+    var itemWidthHotel = 270; // Replace with your desired width
     // Initialize FlexSlider
     $(".sliderhotelimg").flexslider({
       animation: "slide",
       slideshowSpeed: 5000,
       animationSpeed: 600,
       animationLoop: true,
-      itemWidth: itemWidth,
+      itemWidth: itemWidthHotel,
       minItems: 1,
       maxItems: 1,
       controlNav: false,
       directionNav: true,
     });
   });
+  const $dropdownToggle = $(".custom-dropdown-toggle");
+  const $dropdownOptions = $(".custom-dropdown-options");
+
+  $dropdownToggle.on("click", function() {
+    $dropdownOptions.toggleClass("show-options");
+  });
+
+  $dropdownOptions.on("click", ".custom-dropdown-option", function(event) {
+    const selectedValue = $(this).data("value");
+    $dropdownToggle.text(selectedValue);
+    $dropdownOptions.removeClass("show-options");
+  });
+
+  $(document).on("click", function(event) {
+    if (!$dropdownToggle.is(event.target) && !$dropdownOptions.is(event.target) && $dropdownOptions.has(event.target).length === 0) {
+      $dropdownOptions.removeClass("show-options");
+    }
+  });
+
+  $(document).ready(function() {
+    // Initially, show all images
+    $('.card-en').show();
+
+    // When a country button is clicked
+    $('.country-button').click(function() {
+      var selectedCountry = $(this).data('country');
+
+      // Remove active class from all buttons
+      $('.country-button').removeClass('active');
+
+      // Add active class to the clicked button
+      $(this).addClass('active');
+
+      // Hide all images
+      $('.card-en').hide();
+
+      // If "All" is clicked, show all images
+      if (selectedCountry === 'all') {
+        $('.card-en').show();
+      } else {
+        // Show images with the selected country's data-country attribute
+        $('.card-en[data-country="' + selectedCountry + '"]').show();
+      }
+    });
+  });
+
 })(jQuery);
 
-const dropdownToggle = document.querySelector(".custom-dropdown-toggle");
-const dropdownOptions = document.querySelector(".custom-dropdown-options");
-
-dropdownToggle.addEventListener("click", () => {
-  dropdownOptions.classList.toggle("show-options");
-});
-
-dropdownOptions.addEventListener("click", (event) => {
-  if (event.target.classList.contains("custom-dropdown-option")) {
-    const selectedValue = event.target.getAttribute("data-value");
-    dropdownToggle.textContent = selectedValue;
-    dropdownOptions.classList.remove("show-options");
-  }
-});
-
-document.addEventListener("click", (event) => {
-  if (!event.target.closest(".custom-dropdown")) {
-    dropdownOptions.classList.remove("show-options");
-  }
-});

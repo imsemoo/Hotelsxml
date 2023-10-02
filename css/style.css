@@ -10668,6 +10668,28 @@ button.close:hover {
   width: 20px;
   margin-right: 2px;
 }
+/* Style the country selection buttons */
+.country-buttons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  grid-gap: 10px;
+}
+
+.country-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.country-button:hover {
+  background-color: #007bff; /* Change to your desired hover color */
+  color: #fff; /* Text color on hover */
+}
 
 
 #contact {
@@ -11377,4 +11399,10 @@ button.close:hover {
 
 .about-section ul li p {
   font-weight: normal;
+}
+
+#featured .search-result-page .search-form-wrapper .search-form .inputg{
+width: 100%;
+border: 0;
+outline: none;
 }
