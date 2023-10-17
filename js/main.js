@@ -879,26 +879,37 @@ target.parent().addClass("active");
     $(this).addClass("active").siblings().removeClass("active");
 });*/
 
-  $(document).ready(function () {
-    var itemWidthBlogs = ($(".blogs-slider").width() - 20) / 2; // Calculate the item width
+$(document).ready(function () {
+  var itemWidthBlogs = $(".blogs-slider").width() - 20; // Calculate the item width
 
-    // Set the width and margin for each individual blog item
-    $(".projcard:even").css({
-      width: itemWidthBlogs + "px",
-      "margin-right": "20px",
-    });
-
-    $(".blogs-slider").flexslider({
-      animation: "slide",
-      animationLoop: true, // Allow continuous loop
-      itemWidth: itemWidthBlogs, // Set the item width based on calculations
-      minItems: 2, // Minimum number of items to display
-      maxItems: 2, // Maximum number of items to display
-      slideshow: true, // Enable autoplay
-      slideshowSpeed: 5000, // Set autoplay speed in milliseconds (e.g., 5000ms = 5 seconds)
-      pauseOnHover: true, // Pause autoplay on hover
-    });
+  // Set the width and margin for each individual blog item
+  $(".projcard").css({
+    width: itemWidthBlogs + "px",
+    "margin-right": "20px",
   });
+
+  // Define the number of items to display based on screen width
+  var minItems = 2; // Default number of items for larger screens
+  var maxItems = 2; // Default number of items for larger screens
+
+  if ($(window).width() <= 767) {
+    // For screens with a width less than or equal to 767px (typical mobile screens)
+    minItems = 1; // Set the minimum number of items to 1
+    maxItems = 1; // Set the maximum number of items to 1
+  }
+
+  $(".blogs-slider").flexslider({
+    animation: "slide",
+    animationLoop: true, // Allow continuous loop
+    itemWidth: itemWidthBlogs, // Set the item width based on calculations
+    minItems: minItems, // Minimum number of items to display
+    maxItems: maxItems, // Maximum number of items to display
+    slideshow: true, // Enable autoplay
+    slideshowSpeed: 5000, // Set autoplay speed in milliseconds (e.g., 5000ms = 5 seconds)
+    pauseOnHover: true, // Pause autoplay on hover
+  });
+});
+
 
   
  
