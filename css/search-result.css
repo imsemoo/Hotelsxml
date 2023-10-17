@@ -9639,6 +9639,7 @@ svg {
 .kaomoji {
   white-space: nowrap;
 }
+
 /* Define a style for the table */
 .table-room-type,
 .custom-table-style {
@@ -9666,10 +9667,11 @@ svg {
   font-size: 14px;
 }
 
-.custom-table-style td ,
-.custom-table-style th{
+.custom-table-style td,
+.custom-table-style th {
   padding: 15px 10px;
 }
+
 /* Define a style for alternating rows (zebra striping) */
 .table-room-type tr:nth-child(even) td,
 .custom-table-style tr:nth-child(even) td {
@@ -9691,7 +9693,8 @@ svg {
 
 /* Button hover effect */
 .btn-search:hover {
-  transform: scale(1.05); /* Increase size on hover */
+  transform: scale(1.05);
+  /* Increase size on hover */
 }
 
 /* Style icons */
@@ -9715,7 +9718,8 @@ svg {
 /* Hover effect for the container */
 .my-custom-container:hover,
 .table-responsive:hover {
-  transform: scale(1.02); /* Increase size on hover */
+  transform: scale(1.02);
+  /* Increase size on hover */
 }
 
 /* Style form labels */
@@ -9814,4 +9818,46 @@ svg {
 /* Optional: Add border to the table for .custom-table-style */
 .custom-table-style {
   border: 2px solid #ddd;
+}
+
+
+.profile-admin-area .inputg {
+  width: 100%;
+  border: 1px solid #ffffff;
+  padding: 7px 8px 7px 0;
+  outline: none;
+  height: 35px;
+  line-height: normal;
+}
+
+.profile-admin-area .st-tabs .tab-pane {
+  font-size: 14px;
+  background: transparent !important;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.profile-admin-area .tab-content {
+  background-color: transparent !important;
+}
+
+.profile-admin-area  .nav-tabs li.active {
+  text-shadow: unset !important;
+  background: #007bff !important;
+}
+
+
+.profile-admin-area  .nav-tabs li.active a {
+  color: #fff !important;
+}
+
+.profile-admin-area  .nav-tabs li.active  i{
+  color: #fff !important;
+opacity: 1;
+}
+
+.profile-admin-area .modal-dialog h5{
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px !important;
 }

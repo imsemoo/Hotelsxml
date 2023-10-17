@@ -2693,7 +2693,7 @@ ul.st-list {
 }
 
 #st-content-wrapper .st-tabs .nav-tabs li {
-  background: #fff !important;
+  background: #fff ;
 }
 
 #st-content-wrapper .st-tabs .nav-tabs li a {
@@ -2740,7 +2740,7 @@ ul.st-list {
 #st-content-wrapper .st-tabs .nav-tabs li.active {
   outline: 0;
   text-shadow: 1px 1px 3px #888;
-  background: #edecd5 !important;
+  background: #edecd5 ;
 
 }
 
@@ -11472,3 +11472,4 @@ button.close:hover {
   }
   
 }
+
