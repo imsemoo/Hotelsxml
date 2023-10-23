@@ -11477,3 +11477,7 @@ button.close:hover {
   padding: 5px 10px 5px 1px !important;
   border: none;
 }
+
+.form-en-modal .search-result-page .search-form-wrapper .search-form .form-extra-field.has-icon .dropdown label{
+display: block;
+}
