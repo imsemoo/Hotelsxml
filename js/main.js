@@ -881,11 +881,13 @@ target.parent().addClass("active");
 
 $(document).ready(function () {
   var itemWidthBlogs = $(".blogs-slider").width() - 20; // Calculate the item width
+ var itemWidthBlogs = ($(".blogs-slider").width() - 20) / 2; // Calculate the item width
 
   // Set the width and margin for each individual blog item
-  $(".projcard").css({
-    width: itemWidthBlogs + "px",
-    "margin-right": "20px",
+ 
+  $(".projcard:even").css({
+         width: itemWidthBlogs + "px",
+          "margin-right": "20px",
   });
 
   // Define the number of items to display based on screen width

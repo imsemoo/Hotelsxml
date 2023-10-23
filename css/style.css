@@ -11473,3 +11473,7 @@ button.close:hover {
   
 }
 
+.form-en-modal .search-result-page .search-form-wrapper .search-form .inputg{
+  padding: 5px 10px 5px 1px !important;
+  border: none;
+}
