@@ -11498,3 +11498,18 @@ button.close:hover {
 .tooltip{
   position: absolute;
 }
+
+.icon-reply{
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: #0054a6;
+
+}
+.modal-reply-message .modal-content {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 100px auto;
+}
