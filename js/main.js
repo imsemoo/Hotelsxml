@@ -9,7 +9,7 @@
   if ($(".dropdown-toggle", body).length) {
     $(".dropdown-toggle", body).dropdown();
   }
-  
+
 
  // ---------Responsive-navbar-active-animation-----------
  function test() {

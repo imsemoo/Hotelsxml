@@ -2693,7 +2693,7 @@ ul.st-list {
 }
 
 #st-content-wrapper .st-tabs .nav-tabs li {
-  background: #fff ;
+  background: #fff;
 }
 
 #st-content-wrapper .st-tabs .nav-tabs li a {
@@ -2740,7 +2740,7 @@ ul.st-list {
 #st-content-wrapper .st-tabs .nav-tabs li.active {
   outline: 0;
   text-shadow: 1px 1px 3px #888;
-  background: #edecd5 ;
+  background: #edecd5;
 
 }
 
@@ -6975,7 +6975,6 @@ ul.room-meal-list li i {
 
 .offers .card .card-body {
   padding: 20px;
-  position: relative;
 }
 
 .offers .card .card-title {
@@ -11465,19 +11464,37 @@ button.close:hover {
     right: 50%;
 
   }
-  .technology .box-tec{
+
+  .technology .box-tec {
     margin-bottom: 45px;
     width: 100%;
 
   }
-  
+
 }
 
-.form-en-modal .search-result-page .search-form-wrapper .search-form .inputg{
+.form-en-modal .search-result-page .search-form-wrapper .search-form .inputg {
   padding: 5px 10px 5px 1px !important;
   border: none;
 }
 
-.form-en-modal .search-result-page .search-form-wrapper .search-form .form-extra-field.has-icon .dropdown label{
-display: block;
+.form-en-modal .search-result-page .search-form-wrapper .search-form .form-extra-field.has-icon .dropdown label {
+  display: block;
+}
+
+
+/** new css  30/11/2023*/
+
+.flexslider .slides img {
+
+  max-height: 185px;
+}
+
+.offers .card .card-body .card-title {
+  min-height: 48px;
+
+}
+.min-space {position: relative;}
+.tooltip{
+  position: absolute;
 }
