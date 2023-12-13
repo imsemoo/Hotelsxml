@@ -9,6 +9,25 @@
   if ($(".dropdown-toggle", body).length) {
     $(".dropdown-toggle", body).dropdown();
   }
+    
+  document.querySelectorAll('#star-rating .star').forEach(star => {
+    star.onclick = function() {
+        let rating = this.dataset.value;
+        document.querySelectorAll('#star-rating .star').forEach(innerStar => {
+            let ratingValue = innerStar.dataset.value;
+            if (ratingValue <= rating) {
+                innerStar.classList.add('rated');
+            } else {
+                innerStar.classList.remove('rated');
+            }
+        });
+    };
+});
+
+
+
+
+
 
 
  // ---------Responsive-navbar-active-animation-----------
