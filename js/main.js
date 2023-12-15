@@ -24,7 +24,66 @@
     };
 });
 
+  var roomCount = $('#rooms-container .room').length; // Get the initial count of rooms
 
+  $('#add-room').click(function () {
+    roomCount++;
+    var newRoom = $('#room-template').first().clone().show();
+    newRoom.find('.room-title').text('Room ' + roomCount);
+    newRoom.find('.children-ages').empty(); // Clear children ages
+    newRoom.find('.adults input').val('2'); // Reset adults count to 2
+    newRoom.removeAttr('id'); // Ensure the cloned room has no id
+    $('#rooms-container').append(newRoom); // Append the new room to the rooms-container
+});
+
+
+  $(document).on('click', '.remove-room', function () {
+      $(this).closest('.room').remove();
+      roomCount--;
+  });
+
+  $(document).on('click', '.add-child', function () {
+      var childrenDiv = $(this).siblings('.children-ages');
+      var childAgeInput = $('<input type="text" placeholder="Age">');
+      var removeChildButton = $('<button class="remove-child">x</button>');
+      childrenDiv.append($('<span>').append(childAgeInput).append(removeChildButton));
+  });
+
+  $(document).on('click', '.remove-child', function () {
+      $(this).parent('span').remove();
+  });
+
+  $(document).on('click', '.plus', function () {
+      var input = $(this).siblings('input');
+      input.val(parseInt(input.val(), 10) + 1);
+  });
+
+  $(document).on('click', '.minus', function () {
+      var input = $(this).siblings('input');
+      if (parseInt(input.val(), 10) > 1) { // Prevent going below 1 adult
+          input.val(parseInt(input.val(), 10) - 1);
+      }
+  });
+
+  $('#done').click(function () {
+      var totalRooms = $('#rooms-container .room').length;
+      var totalAdults = 0;
+      var totalChildren = 0;
+
+      $('#rooms-container .room').each(function () {
+          totalAdults += parseInt($(this).find('.adults input').val(), 10);
+          totalChildren += $(this).find('.children-ages input').length;
+      });
+
+      var outputData = "Total: " + totalRooms + " rooms, " + totalAdults + " adults, " + totalChildren + " children";
+      $('#output').text(outputData).show();
+      $('.filter-booking').hide();
+  });
+
+   // Event handler for clicking on the output div
+   $('#output').click(function () {
+      $('.filter-booking').toggle(); // Show the rooms container again
+  });
 
 
 

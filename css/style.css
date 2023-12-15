@@ -20,7 +20,6 @@
 }
 
 #top-header-menu-area .menu-area {
-  position: relative;
   background: transparent;
   width: 100%;
   float: left;
@@ -11455,18 +11454,23 @@ button.close:hover {
   min-height: 48px;
 
 }
-.min-space {position: relative;}
-.tooltip{
+
+.min-space {
+  position: relative;
+}
+
+.tooltip {
   position: absolute;
 }
 
-.icon-reply{
+.icon-reply {
   background: transparent !important;
   border: none !important;
   outline: none !important;
   color: #0054a6;
 
 }
+
 .modal-reply-message .modal-content {
   background-color: #ffffff;
   border: none;
@@ -11474,8 +11478,9 @@ button.close:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin: 100px auto;
 }
+
 /* Start new Header*/
-.header-en .owl-prev, 
+.header-en .owl-prev,
 .header-en .owl-next {
   width: 50px;
   height: 50px;
@@ -11494,7 +11499,7 @@ button.close:hover {
   right: 10px;
 }
 
-.header-en .owl-prev:before, 
+.header-en .owl-prev:before,
 .header-en .owl-next:before {
   font-family: 'ElegantIcons';
   font-size: 40px;
@@ -11502,11 +11507,13 @@ button.close:hover {
 }
 
 .header-en .owl-prev:before {
-  content: "\34"; /* Replace with the correct code for your icon */
+  content: "\34";
+  /* Replace with the correct code for your icon */
 }
 
 .header-en .owl-next:before {
-  content: "\35"; /* Replace with the correct code for your icon */
+  content: "\35";
+  /* Replace with the correct code for your icon */
 }
 
 .header-en img {
@@ -11567,13 +11574,14 @@ button.close:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .header-en .owl-prev, 
+
+  .header-en .owl-prev,
   .header-en .owl-next {
     width: 40px;
     height: 40px;
   }
 
-  .header-en .owl-prev:before, 
+  .header-en .owl-prev:before,
   .header-en .owl-next:before {
     font-size: 30px;
   }
@@ -11589,7 +11597,8 @@ button.close:hover {
 /* Adjustments for static section */
 #featured .static-content img {
   display: block;
-  width: 100%; /* Adjust as needed */
+  width: 100%;
+  /* Adjust as needed */
   height: auto;
   height: 100vh;
 
@@ -11670,6 +11679,7 @@ button.close:hover {
 .featured-overlay-inner .social-networks {
   width: 100%;
 }
+
 /*
 .en-rating .rate-list {
   list-style-type: none; 
@@ -11746,5 +11756,296 @@ button.close:hover {
 
 .star.rated {
   color: gold;
+}
+
+/* Styling for the hero section */
+.hero-section {
+  background-image: url('../images/5369602.png');
+  background-image: url('../images/type-entertainment-complex-popular-resort-with-pools-water-parks-turkey-with-more-than-5-million-visitors-year-amara-dolce-vita-luxury-hotel-resort-tekirova-kemer.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  padding: 150px  0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+/* Styling for the form elements */
+.booking-filter {
+  background-color: #646568ad;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);position: relative;
+  border-top-right-radius: 0 ;
+  border-top-left-radius: 0 ;
+}
+.booking-filter .tabs{
+  position: absolute;
+  left: 0;
+  top: -56px;
+ 
+}
+.booking-filter .tabs .tab1{
+  padding: 10px;
+  background-color: #646568ad;
+  border-top-right-radius: 8px ;
+  border-top-left-radius: 8px ;
+  font-size: 24px;
+}
+
+/* Styling for the input fields */
+.hero-section .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #555;
+
+}
+
+/* Styling for the buttons */
+.hero-section .btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hero-section .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the counters */
+.hero-section .guests .counter-btn {
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+
+}
+
+.hero-section .guests .counter-left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.hero-section .guests .counter-right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.hero-section .guests span {
+
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #555;
+  height: 45px;
+}
+
+.hero-section .guests span input {
+  border: transparent;
+  background: transparent;
+  height: 100%;
+  padding: 10px;
+}
+
+.hero-section .counter-btn:hover {
+  background-color: #FA5636;
+  color: #fff;
+
+}
+
+/* Styling for the select dropdown */
+.hero-section select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  height: 45px;
+  color: #555;
+
+}
+
+.hero-section label {
+  display: block;
+  color: #fff;
+}
+
+/* Optional: Style for the search hotel button */
+.hero-section .btn-primary {
+  background-color: #FFD700 !important;
+  color: #000 !important;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: auto;
+  text-align: center;
+  width: max-content;
+  display: block;
+}
+
+.hero-section .btn-primary:hover {
+  background-color: #FA5636 !important;
+  color: #fff !important;
+}
+
+.hero-section .guests>div {}
+
+#top-header-menu-area .menu-area {
+  float: unset;
+}
+
+
+
+
+
+.filter-booking{
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: none;
+  position: absolute;
+  width: 96%;
+  z-index: 9;
+}
+
+#rooms-container .room {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#rooms-container .room-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#rooms-container .room-title {
+  font-weight: bold;
+  color: #000;
+}
+
+#rooms-container .remove-room {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#rooms-container .guests {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-flow: column;
+  grid-gap: 20px;
+}
+
+#rooms-container .adults,
+#rooms-container .children {
+  display: flex;
+  align-items: center;
+}
+
+#rooms-container .adults label,
+#rooms-container .children label {
+  margin-right: 10px;
+  color: #000;
+
+}
+
+#rooms-container .adults input {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+#rooms-container .minus,
+#rooms-container .plus {
+  width: 45px;
+  height: 45px;
+}
+
+#rooms-container .minus,
+#rooms-container .plus,
+#rooms-container .add-child,
+#rooms-container #add-room,
+.filter-booking #done {
+  background: #ffc107;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#rooms-container .children-ages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#rooms-container .children-ages span {
+  margin: 0 5px 5px 0;
+  padding: 2px 5px;
+  background-color: #e1e1e1;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#rooms-container #add-room {
+  margin-bottom: 10px;
+}
+
+.filter-booking #done {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #28a745;
+  color: white;
+}
+
+#output {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #555;
+  height: 45px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#rooms-container .remove-child {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+
+}
+
+#rooms-container .adults,
+#rooms-container .children {
+  display: block;
 }
 
