@@ -11766,11 +11766,14 @@ button.close:hover {
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
-  padding: 150px  0;
+  padding: 100px 0 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
 
+.offers {
+  margin: 50px 0 !important;
+}
 
 
 /* Styling for the form elements */
@@ -11778,24 +11781,26 @@ button.close:hover {
   background-color: #646568d6;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);position: relative;
-  border-top-right-radius: 0 ;
-  border-top-left-radius: 0 ;
-      width: 85%;
-    margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+
 
 }
-.booking-filter .tabs{
+
+.booking-filter .tabs {
   position: absolute;
   left: 0;
   top: -56px;
- 
+
 }
-.booking-filter .tabs .tab1{
+
+.booking-filter .tabs .tab1 {
   padding: 10px 30px;
   background-color: #646568d6;
-  border-top-right-radius: 8px ;
-  border-top-left-radius: 8px ;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
   font-size: 24px;
 }
 
@@ -11917,7 +11922,7 @@ button.close:hover {
 
 
 
-.filter-booking{
+.filter-booking {
   background: #ffffff;
   border: 1px solid #ddd;
   padding: 15px;
@@ -12001,15 +12006,18 @@ button.close:hover {
   padding: 5px 10px;
   cursor: pointer;
 }
+
 #rooms-container .minus,
-#rooms-container .plus{
-  background:#ccc
+#rooms-container .plus {
+  background: #ccc
 }
-#rooms-container #add-room{
+
+#rooms-container #add-room {
   background: transparent;
   color: #0056b3;
   padding: 0;
 }
+
 #rooms-container .children-ages {
   display: flex;
   flex-wrap: wrap;
@@ -12061,4 +12069,3 @@ button.close:hover {
 #rooms-container .children {
   display: block;
 }
-
