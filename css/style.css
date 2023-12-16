@@ -12069,3 +12069,22 @@ button.close:hover {
 #rooms-container .children {
   display: block;
 }
+
+.container-chek{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+
+}
+
+.account > .row > .col-md-6 > .card{
+
+background: #646568d6 !important;
+}
+
+
+
+.account > .row > .col-md-6 > .card > .card-header > .card-title {
+
+    color: #fff;
+}
