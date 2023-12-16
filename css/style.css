@@ -11775,12 +11775,15 @@ button.close:hover {
 
 /* Styling for the form elements */
 .booking-filter {
-  background-color: #646568ad;
+  background-color: #646568d6;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);position: relative;
   border-top-right-radius: 0 ;
   border-top-left-radius: 0 ;
+      width: 85%;
+    margin: auto;
+
 }
 .booking-filter .tabs{
   position: absolute;
@@ -11789,8 +11792,8 @@ button.close:hover {
  
 }
 .booking-filter .tabs .tab1{
-  padding: 10px;
-  background-color: #646568ad;
+  padding: 10px 30px;
+  background-color: #646568d6;
   border-top-right-radius: 8px ;
   border-top-left-radius: 8px ;
   font-size: 24px;
@@ -11850,7 +11853,7 @@ button.close:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
   color: #555;
-  height: 45px;
+  height: 30px;
 }
 
 .hero-section .guests span input {
@@ -11858,6 +11861,7 @@ button.close:hover {
   background: transparent;
   height: 100%;
   padding: 10px;
+  width: 45px;
 }
 
 .hero-section .counter-btn:hover {
@@ -11943,18 +11947,17 @@ button.close:hover {
 }
 
 #rooms-container .remove-room {
-  background-color: #ff4d4d;
-  color: white;
+  background-color: transparent;
+  color: #d40000;
   border: none;
-  padding: 5px 10px;
   cursor: pointer;
+  font-weight: 500;
 }
 
 #rooms-container .guests {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  flex-flow: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
   grid-gap: 20px;
 }
 
@@ -11977,12 +11980,14 @@ button.close:hover {
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
+  width: 43px;
+  height: 30px;
 }
 
 #rooms-container .minus,
 #rooms-container .plus {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
 }
 
 #rooms-container .minus,
@@ -11990,13 +11995,21 @@ button.close:hover {
 #rooms-container .add-child,
 #rooms-container #add-room,
 .filter-booking #done {
-  background: #ffc107;
+  background: #0056b3;
   border: none;
   color: white;
   padding: 5px 10px;
   cursor: pointer;
 }
-
+#rooms-container .minus,
+#rooms-container .plus{
+  background:#ccc
+}
+#rooms-container #add-room{
+  background: transparent;
+  color: #0056b3;
+  padding: 0;
+}
 #rooms-container .children-ages {
   display: flex;
   flex-wrap: wrap;
@@ -12020,7 +12033,7 @@ button.close:hover {
 .filter-booking #done {
   width: 100%;
   padding: 10px 0;
-  background-color: #28a745;
+  background-color: #0056b3;
   color: white;
 }
 
