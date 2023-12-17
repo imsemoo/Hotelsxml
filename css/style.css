@@ -12088,3 +12088,14 @@ background: #646568d6 !important;
 
     color: #fff;
 }
+
+.hero-section .title{
+  margin-bottom: 100px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #ffffff;
+  padding: 20px 30px;
+  background-color: #646568d6;
+}
